@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url : jdbc:mysql://1.15.39.90:3306/takeout?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
+    password: root
+    username: root
+    type: com.zaxxer.hikari.HikariDataSource
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 100MB
+
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+#    打印相关数据库查询语句的日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    保存后返回主键的id
+    use-generated-keys: true
+
+#  global-config:
+#    db-config:
+#      id-type: auto #主键自增长的方式配置
+
+#图片的保存路径
+img:
+  #path: E:\\temp\\img\\
+  path: /static/imgs/
+server:
+  port: 8080
